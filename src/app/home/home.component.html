@@ -1,0 +1,102 @@
+<div class="container">
+
+    <div class="jumbotron col-lg-8 mx-auto dark shadow">
+        <div class="row">
+
+            <div class="col-md-6">
+                <img src="..\assets\imgs\img-lateral.png" class="card-img-top">
+            </div>
+
+            <div class="col-md-6 mb-3">
+                <h1>Fale Mais</h1>
+                <p>Calcule o valor da ligação.</p>
+                <hr class="style">
+
+                <form>
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <!-- <label for="fullname" class="form-title-label">Cód. de Origem</label> -->
+                            <!-- <input type="text" [(ngModel)]="calculo.codOrigem" name="fullname" class="form-control" id="fullname" value="" required> -->
+                            <label for="codOrigem" class="form-title-label">Cód. de Origem</label>
+                            <select class="form-control" id="codOrigem" name="codOrigem" [(ngModel)]="calculo.codOrigem"
+                                (ngModelChange)="alterarOrigem($event)">
+                                <option value="11">11</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <label for="codDestino" class="form-title-label">Cód. de Destino</label>
+                            <select class="form-control" id="codDestino" name="codDestino"
+                                [(ngModel)]="calculo.codDestino" (ngModelChange)="alterarDestino($event)">
+                                <option value="11">11</option>
+                                <option value="16">16</option>
+                                <option value="17">17</option>
+                                <option value="18">18</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-md-6 mb-3">
+                            <label for="id" class="form-title-label">Tempo de Ligação</label>
+                            <input type="number" [(ngModel)]="calculo.tempoLigacao" name="tempoLigacao"
+                                class="form-control" id="tempoLigacao" value="" required>
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <label class="form-title-label">Plano</label>
+                            <div class="form-group">
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" [(ngModel)]="calculo.plano"
+                                        name="planoOptions" id="planoOption1" value="30" checked>
+                                    <label class="form-check-label" for="planoOption1">Fale Mais 30</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" [(ngModel)]="calculo.plano"
+                                        name="planoOptions" id="planoOption2" value="60">
+                                    <label class="form-check-label" for="planoOption2">Fale Mais 60</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" [(ngModel)]="calculo.plano"
+                                        name="planoOptions" id="planoOption3" value="120">
+                                    <label class="form-check-label" for="planoOption3">Fale Mais 120</label>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- || calculo.codOrigem.length < 1 -->
+                    <button type="submit" class="btn btn-primary btn-block mr-4" (click)="calculoFinal()"
+                        [disabled]="disableButton">Calcular</button>
+                </form>
+
+                <hr class="style">
+
+                <div class="form-row" *ngIf="valores">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2>Com Fale Mais:</h2>
+                                <p>{{ precoPlano | currency:'BRL' }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2>Sem Fale Mais:</h2>
+                                <p>{{ precoNormal | currency:'BRL' }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</div>
