@@ -9,7 +9,7 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
-  public calculo: any = { codOrigem: "", codDestino: "", tempoLigacao: "", plano: "" };
+  public calculo: any = { codOrigem: "11", codDestino: "16", tempoLigacao: "80", plano: "30" };
   disableButton: boolean = false; 
   valores: boolean = false; 
   precoNormal: number = 0.0;
