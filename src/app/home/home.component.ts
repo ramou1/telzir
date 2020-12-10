@@ -9,13 +9,13 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
-  public calculo: any = [{ codOrigem: "", codDestino: "", tempoLigacao: "", plano: "" }];
+  public calculo: any = { codOrigem: "", codDestino: "", tempoLigacao: "", plano: "" };
   disableButton: boolean = false; 
   valores: boolean = false; 
   precoNormal: number = 0.0;
   precoPlano: number = 0.0;
 
-  ngOnInit(): void {    
+  ngOnInit(): void {  
   }
 
   alterarOrigem(valor) {
@@ -27,8 +27,9 @@ export class HomeComponent implements OnInit {
   }
 
   calculoPlano(valor) {
-    if(this.calculo.tempoLigacao > this.calculo.plano) {
-      this.precoPlano = (this.calculo.tempoLigacao - this.calculo.plano) * ((0.1 * valor) + valor);
+    this.precoPlano = 0;
+    if(this.calculo.tempoLigacao > parseInt(this.calculo.plano)) {
+      this.precoPlano = (this.calculo.tempoLigacao - parseInt(this.calculo.plano)) * ((0.1 * valor) + valor);
     } 
   }
 
@@ -49,12 +50,20 @@ export class HomeComponent implements OnInit {
         this.precoNormal = this.calculo.tempoLigacao * 0.9;
         this.calculoPlano(0.9);
       }
+      else {
+        this.precoNormal = 0;
+        this.precoPlano = 0;
+      }
     }
 
     else if(this.calculo.codOrigem == "16") {
       if(this.calculo.codDestino == "11") {
         this.precoNormal = this.calculo.tempoLigacao * 2.9;
         this.calculoPlano(2.9);
+      }
+      else {
+        this.precoNormal = 0;
+        this.precoPlano = 0;
       }
     }
 
@@ -63,12 +72,20 @@ export class HomeComponent implements OnInit {
         this.precoNormal = this.calculo.tempoLigacao * 2.7;
         this.calculoPlano(2.7);
       }
+      else {
+        this.precoNormal = 0;
+        this.precoPlano = 0;
+      }
     }
 
     else if(this.calculo.codOrigem == "18") {
       if(this.calculo.codDestino == "11") {
         this.precoNormal = this.calculo.tempoLigacao * 1.9;
         this.calculoPlano(1.9);
+      }
+      else {
+        this.precoNormal = 0;
+        this.precoPlano = 0;
       }
     }
 

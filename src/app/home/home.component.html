@@ -68,15 +68,14 @@
 
                         </div>
                     </div>
-                    <!-- || calculo.codOrigem.length < 1 -->
                     <button type="submit" class="btn btn-primary btn-block mr-4" (click)="calculoFinal()"
-                        [disabled]="disableButton">Calcular</button>
+                        [disabled]="disableButton || calculo.codOrigem.length < 1 || calculo.codDestino.length < 1 || calculo.tempoLigacao.length < 1 || calculo.plano.length < 1">Calcular</button>
                 </form>
 
                 <hr class="style">
 
                 <div class="form-row" *ngIf="valores">
-                    <div class="col-md-6">
+                    <div class="col-md-6 mb-3">
                         <div class="card">
                             <div class="card-body">
                                 <h2>Com Fale Mais:</h2>
@@ -85,7 +84,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-6">
+                    <div class="col-md-6 mb-3">
                         <div class="card">
                             <div class="card-body">
                                 <h2>Sem Fale Mais:</h2>
