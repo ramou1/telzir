@@ -1,5 +1,5 @@
 # Telzir
-Projeto criado na versão 10.0.4 do Angular CLI.
+Projeto web responsivo criado na versão 10.0.4 do Angular CLI e Bootstrap.
 
 
 ## Development server
@@ -12,3 +12,6 @@ No Prompt de Comando, navegue até a pasta do arquivo e execute `ng test` para r
 
 ## Protótipo Telzir 
 ![print](https://raw.githubusercontent.com/ramou1/telzir/master/src/assets/imgs/prototipo.jpg)
+
+## Versão Final Telzir 
+![print](https://raw.githubusercontent.com/ramou1/telzir/master/src/assets/imgs/versao-final.png)
