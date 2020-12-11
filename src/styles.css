@@ -63,7 +63,7 @@ hr.style {
     border-top: 2px dotted #803629;
   }
 
-.btn-primary, .btn-primary:disabled {
+.btn-primary, .btn-primary:disabled, .btn-primary:focus, .btn-primary:active {
     font-weight: 600;
     text-transform: uppercase;
     background-color: #ff9785;

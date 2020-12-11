@@ -9,7 +9,7 @@ export class HomeComponent implements OnInit {
 
   constructor() { }
 
-  public calculo: any = { codOrigem: "11", codDestino: "16", tempoLigacao: "80", plano: "30" };
+  public calculo: any = { codOrigem: "11", codDestino: "16", tempoLigacao: "", plano: "30" };
   disableButton: boolean = false; 
   valores: boolean = false; 
   precoNormal: number = 0.0;
@@ -89,7 +89,7 @@ export class HomeComponent implements OnInit {
       }
     }
 
-    console.log("dados: ", this.calculo);
+    // console.log("dados: ", this.calculo);
   }
 
 }

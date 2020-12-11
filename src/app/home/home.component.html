@@ -15,8 +15,6 @@
                 <form>
                     <div class="form-row">
                         <div class="col-md-6 mb-3">
-                            <!-- <label for="fullname" class="form-title-label">Cód. de Origem</label> -->
-                            <!-- <input type="text" [(ngModel)]="calculo.codOrigem" name="fullname" class="form-control" id="fullname" value="" required> -->
                             <label for="codOrigem" class="form-title-label">Cód. de Origem</label>
                             <select class="form-control" id="codOrigem" name="codOrigem" [(ngModel)]="calculo.codOrigem"
                                 (ngModelChange)="alterarOrigem($event)">
@@ -68,9 +66,9 @@
 
                         </div>
                     </div>
-                    <button type="submit" class="btn btn-primary btn-block mr-4" (click)="calculoFinal()">Calcular</button>
-                    <!-- <button type="submit" class="btn btn-primary btn-block mr-4" (click)="calculoFinal()"
-                        [disabled]="disableButton || calculo.codOrigem.length < 1 || calculo.codDestino.length < 1 || calculo.tempoLigacao.length < 1 || calculo.plano.length < 1">Calcular</button> -->
+                    <!-- <button type="submit" class="btn btn-primary btn-block mr-4" (click)="calculoFinal()">Calcular</button> -->
+                    <button type="submit" class="btn btn-primary btn-block mr-4" (click)="calculoFinal()"
+                        [disabled]="disableButton || calculo.tempoLigacao.length < 1 || calculo.plano.length < 1">Calcular</button>
                 </form>
 
                 <hr class="style">
