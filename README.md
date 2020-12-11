@@ -13,6 +13,11 @@ No Prompt de comando, navegue até a pasta do arquivo, execute o código `ng ser
 No Prompt de comando, navegue até a pasta do arquivo e execute `ng test` para rodar os testes de unidade via [Karma](https://karma-runner.github.io). Os testes dos resultados foram feitos no `HomeComponent`, através do arquivo de spec.
 
 
+## Protótipo Telzir 
+
+![print](https://raw.githubusercontent.com/ramou1/telzir/master/src/assets/imgs/prototipo.jpg)
+
+
 ## Running end-to-end tests
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
